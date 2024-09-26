@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 10em;
+    text-align: center;
+    flex-direction: column;
+    animation: animate 10s linear infinite;
+    background-image: url('public/tesla-wizard.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    opacity: 10; /* Ajusta la transparencia respecto del fondo */
+}
+
+#storie {
+    padding: 1em;
+    background-color: aliceblue;
+    /* background-clip: padding-box; */
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+        transform: translateY(0);
+    }
+    100% {
+        filter: hue-rotate(350deg); /* Cambio de colores */
+        transform: translateY(-50px); /* Movimiento sutil hacia arriba */
+    }
+}
+
+#tesla-box, #go-play {
+    border-radius: 50%;
+}
+
+#tesla-box {
+    width: 20em;
+    height: 20em; 
+    border: solid rgb(5, 5, 60);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#go-play {
+    margin-top: 2em;
+    width: 5em;
+    height: 5em; 
+    border: solid black;
+}
+
+.background {
+    margin-top: 50em;
+    padding-top: 19em;
+    background-color: whitesmoke;
+    opacity: 0.8;
+}
+
+.font-text {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 5em;
+    margin-top: 0.5em;
+}
+
+#jugar {
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    text-decoration-line: overline;
+    text-shadow: 3px 2px 3px black;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black; 
+    font-size: 2em;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: whitesmoke;
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+}
