@@ -7,7 +7,7 @@ body {
     text-align: center;
     flex-direction: column;
     animation: animate 10s linear infinite;
-    background-image: url('public/tesla-wizard.jpg');
+    background-image: url('assets/tesla-wizard.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
