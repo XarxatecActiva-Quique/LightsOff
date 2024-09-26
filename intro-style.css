@@ -6,7 +6,7 @@ body {
     margin: 10em;
     text-align: center;
     flex-direction: column;
-    animation: animate 10s linear infinite;
+    animation: animate 8s linear forwards;
     background-image: url('assets/tesla-wizard.jpg');
     background-attachment: fixed;
     background-size: cover;
@@ -27,7 +27,7 @@ body {
     }
     100% {
         filter: hue-rotate(350deg); /* Cambio de colores */
-        transform: translateY(-50px); /* Movimiento sutil hacia arriba */
+        transform: translateY(-1500px); /* Movimiento sutil hacia arriba */
     }
 }
 
