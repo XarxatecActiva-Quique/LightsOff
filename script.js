@@ -200,7 +200,7 @@ function isWinner() {
     gameLevel++;
     setTimeout(() => {
         newGame();
-    }, 2000);
+    }, 500);
 }
 
 // Movimiento del jugador
