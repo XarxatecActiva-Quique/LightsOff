@@ -1,7 +1,6 @@
 const MAXCELL = 25;
 const MINCELL = 0;
 
-/*ANDREA --------------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     const wizard = document.getElementById('wizard');
     const otherImage = document.getElementById('otherImage');
@@ -76,8 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(startMovement, 2000); // Reiniciar después de 2 segundos
     }, 10000); // Detener después de 10 segundos
 });
--------------------------------------------------------------------------------
-*/
+
 
 // Crea el tablero inicial mediante un número de jugadas aleatorias según el nivel
 
