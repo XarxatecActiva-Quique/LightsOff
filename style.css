@@ -1,0 +1,87 @@
+/* ANDREA ------------------------------------------------------------------------------
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+    animation: animate 7s linear infinite ;
+}
+
+body {
+    background-image: url('public/_86932f4b-11ea-4e27-a5c1-20fa61d692ca.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.8;
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.img-size {
+    height: 3em;
+    width: 3em;
+}
+
+#wizard {
+    width: 20em;
+    height: 20em;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+
+.font-text{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 3em;
+    margin: 0;
+}
+
+.board-container, h1, h2 {
+    position: relative;
+    z-index: 1; 
+    color: white; 
+}
+
+p {
+    position: relative;
+    z-index: 1; 
+    color: white; 
+    font-size: 3em;
+    padding: 2em;
+}
+--------------------------------------------------------------------------------------*/
+
+.board-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+}
+.cell {
+    width: 4em;
+    height: 4em;
+    margin: 0.3em;
+}
+.bg-light-off {
+    background-color: black;
+}
+
+.bg-light-on {
+    background-color: cyan;
+}
+
