@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar el movimiento al cargar la página
     startMovement();
 
-    // Simulación de pasar de nivel (puedes reemplazar esto con tu lógica)
+    // Simulación de pasar de nivel 
     setTimeout(() => {
         stopMovement();
         // Reiniciar el movimiento después de pasar de nivel
@@ -250,9 +250,7 @@ function newGame() {
     initialBoard();
     playerMove();
 
-    /*ANDREA ----------------------------------------------------------------------
     startMovement(); // Iniciar el movimiento del mago al comenzar un nuevo nivel
-    ----------------------------------------------------------------------------------*/
 }
 
 let cells = document.querySelectorAll(".cell");
