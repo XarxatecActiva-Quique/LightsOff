@@ -1,84 +1,7 @@
 const MAXCELL = 25;
 const MINCELL = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const wizard = document.getElementById('wizard');
-    const otherImage = document.getElementById('otherImage');
-    let posX = 0;
-    let posY = 0;
-    const maxPos = 250;
-    const maxPosY = 200;
-    const interval = 25;
-    let direction = 'down-right'; // Puede ser 'down-right', 'up-right', 'down-left', 'up-left'
-    let wizardId, otherImageId;
-
-    function frame() {
-        switch (direction) {
-            case 'down-right':
-                if (posX >= maxPos || posY >= maxPosY) {
-                    direction = 'up-right';
-                } else {
-                    posX++;
-                    posY++;
-                }
-                break;
-            case 'up-right':
-                if (posY <= 0) {
-                    direction = 'down-left';
-                } else {
-                    posX++;
-                    posY--;
-                }
-                break;
-            case 'down-left':
-                if (posX <= 0 || posY >= maxPosY) {
-                    direction = 'up-left';
-                } else {
-                    posX--;
-                    posY++;
-                }
-                break;
-            case 'up-left':
-                if (posY <= 0) {
-                    direction = 'down-right';
-                } else {
-                    posX--;
-                    posY--;
-                }
-                break;
-        }
-        wizard.style.transform = `translate(${posX}px, ${posY}px)`;
-    }
-
-    function otherImageFrame() {
-        otherImage.style.transform = `translateY(${posY}px)`;
-        posY = (posY + 1) % window.innerHeight;
-    }
-
-    function startMovement() {
-        wizardId = setInterval(frame, interval);
-        otherImageId = setInterval(otherImageFrame, interval);
-    }
-
-    function stopMovement() {
-        clearInterval(wizardId);
-        clearInterval(otherImageId);
-    }
-
-    // Iniciar el movimiento al cargar la página
-    startMovement();
-
-    // Simulación de pasar de nivel 
-    setTimeout(() => {
-        stopMovement();
-        // Reiniciar el movimiento después de pasar de nivel
-        setTimeout(startMovement, 2000); // Reiniciar después de 2 segundos
-    }, 5000); // Detener después de 10 segundos
-});
-
-
 // Crea el tablero inicial mediante un número de jugadas aleatorias según el nivel
-
 function initialBoard() {
     for (let i = 1; i <= gameLevel; i++) {
         let randomCell = Math.floor(Math.random() * (MAXCELL - MINCELL) + MINCELL);
@@ -247,10 +170,32 @@ function newGame() {
         }
     });
 
+    wizardAnimation();
     initialBoard();
-    playerMove();
+    playerMove();   
+    
+}
 
-    startMovement(); // Iniciar el movimiento del mago al comenzar un nuevo nivel
+// Animación fadeout-fadeIn
+function wizardAnimation() {
+    const wizard = document.getElementById('wizard');
+    const minPosX = 0;
+    const maxPosX = 1000;
+    const startNoX = 200;
+    const endNoX = 800;
+    const minPosY = 0;
+    const maxPosY = 200;
+    // Calcula aleatoriamente la coordenada Y
+    let posY = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;
+    // Calcula aleatoriamente la coordenada X, excluyendo el centro de la pantalla
+    let random = Math.random();  // Generar aleatoriamente si se tomará del rango inferior o superior
+    if (random < 0.5) {
+        posX = Math.random() * (startNoX - minPosX) + minPosX;  // Generar un número aleatorio entre 'minPosX' y 'startNoX'
+    } else {
+        posX = Math.random() * (maxPosX - endNoX) + endNoX;  // Generar un número aleatorio entre 'endNoX' y 'maxPosX'
+    }
+
+    wizard.style.transform = `translate(${posX}px, ${posY}px)`;
 }
 
 let cells = document.querySelectorAll(".cell");
