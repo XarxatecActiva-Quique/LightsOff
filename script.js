@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stopMovement();
         // Reiniciar el movimiento después de pasar de nivel
         setTimeout(startMovement, 2000); // Reiniciar después de 2 segundos
-    }, 10000); // Detener después de 10 segundos
+    }, 5000); // Detener después de 10 segundos
 });
 
 
