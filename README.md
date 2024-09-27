@@ -8,3 +8,4 @@ Para completar el puzle Luces fuera, debe apagar todas las luces del tablero. Es
 - El juego comienza con un patrón de luces en un tablero de 5x5.
 - Seleccione una ficha para cambiar su estado y el de sus vecinos no diagonales.
 - Una vez que haya cambiado el estado de todas las luces, habrá completado ese nivel y podrá pasar al siguiente.
+- En cada nivel, la complejidad aumenta
