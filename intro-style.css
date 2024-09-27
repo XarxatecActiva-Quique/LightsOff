@@ -43,8 +43,8 @@ body {
 
 #go-play {
     margin-top: 2em;
-    width: 5em;
-    height: 5em; 
+    width: 8em;
+    height: 8em; 
     border: solid black;
 }
 
@@ -65,7 +65,7 @@ body {
 #jugar {
     color: blue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2em;
+    font-size: 3.5em;
     text-decoration-line: overline;
     text-shadow: 3px 2px 3px black;
 }
