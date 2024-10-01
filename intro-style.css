@@ -42,11 +42,14 @@ body {
 }
 
 #go-play {
-    margin-top: 2em;
-    width: 8em;
-    height: 8em; 
-    border: solid black;
-}
+    margin-top: 3em;
+    padding: 0;
+    width: 10em;
+    height: 10em; 
+    object-fit: cover;
+    border-radius: 50%; /* Esto hace que la imagen sea circular */
+    overflow: hidden; 
+} 
 
 .background {
     margin-top: 50em;

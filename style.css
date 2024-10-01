@@ -32,11 +32,14 @@ body {
 }
 
 #wizard {
-    width: 20em;
-    height: 20em;
     position: absolute;
     top: 50px;
     left: 50px;
+    object-fit: cover;
+    width: 15em; 
+    height: 15em; 
+    border-radius: 50%; /* Esto hace que la imagen sea circular */
+    overflow: hidden; 
 }
 
 
