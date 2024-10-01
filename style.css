@@ -10,7 +10,7 @@ body {
 }
 
 body {
-    background-image: url('assets/_86932f4b-11ea-4e27-a5c1-20fa61d692ca.jpg');
+    background-image: url('assets/_1e75fe4a-a5b7-40bf-a592-b9e21b699b27.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -47,12 +47,17 @@ body {
     font-family: 'IM Fell English SC', serif;
     font-size: 3em;
     margin: 0;
+    padding-bottom: 0.3em;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 10);
 }
 
-.board-container, h1, h2 {
-    position: relative;
-    z-index: 1; 
+h2{
+    font-size: 1.7em;
     color: white; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 p {
