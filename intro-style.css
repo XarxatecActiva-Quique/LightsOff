@@ -67,7 +67,8 @@ body {
 
 #jugar {
     color: blue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'IM Fell English SC', serif;;
     font-size: 3.5em;
     text-decoration-line: overline;
     text-shadow: 3px 2px 3px black;

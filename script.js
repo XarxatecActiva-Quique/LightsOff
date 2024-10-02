@@ -176,27 +176,70 @@ function newGame() {
     
 }
 
-// Animación fadeout-fadeIn
+// Animación Quique fadeout-fadeIn
+// function wizardAnimation() {
+//     const wizard = document.getElementById('wizard');
+//     const minPosX = 0;
+//     const maxPosX = 1000;
+//     const startNoX = 200;
+//     const endNoX = 800;
+//     const minPosY = 0;
+//     const maxPosY = 200;
+//     // Calcula aleatoriamente la coordenada Y
+//     let posY = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;
+//     // Calcula aleatoriamente la coordenada X, excluyendo el centro de la pantalla
+//     let random = Math.random();  // Generar aleatoriamente si se tomará del rango inferior o superior
+//     if (random < 0.5) {
+//         posX = Math.random() * (startNoX - minPosX) + minPosX;  // Generar un número aleatorio entre 'minPosX' y 'startNoX'
+//     } else {
+//         posX = Math.random() * (maxPosX - endNoX) + endNoX;  // Generar un número aleatorio entre 'endNoX' y 'maxPosX'
+//     }
+
+//     wizard.style.transform = `translate(${posX}px, ${posY}px)`;
+// }
+
+
+// Animación Andrea Prueba
 function wizardAnimation() {
     const wizard = document.getElementById('wizard');
     const minPosX = 0;
-    const maxPosX = 1000;
-    const startNoX = 200;
-    const endNoX = 800;
+    const maxPosX = window.innerWidth - wizard.offsetWidth;
     const minPosY = 0;
-    const maxPosY = 200;
-    // Calcula aleatoriamente la coordenada Y
-    let posY = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;
-    // Calcula aleatoriamente la coordenada X, excluyendo el centro de la pantalla
-    let random = Math.random();  // Generar aleatoriamente si se tomará del rango inferior o superior
-    if (random < 0.5) {
-        posX = Math.random() * (startNoX - minPosX) + minPosX;  // Generar un número aleatorio entre 'minPosX' y 'startNoX'
-    } else {
-        posX = Math.random() * (maxPosX - endNoX) + endNoX;  // Generar un número aleatorio entre 'endNoX' y 'maxPosX'
-    }
+    const maxPosY = window.innerHeight - wizard.offsetHeight;
 
-    wizard.style.transform = `translate(${posX}px, ${posY}px)`;
+    // Calcula aleatoriamente la coordenada Y
+    let posY;
+    do {
+        posY = Math.floor(Math.random() * (maxPosY - minPosY + 1)) + minPosY;
+    } while (posY > window.innerHeight / 3 && posY < 2 * window.innerHeight / 3);
+
+    // Calcula aleatoriamente la coordenada X, asegurando que no esté en el centro
+    let posX;
+    do {
+        posX = Math.floor(Math.random() * (maxPosX - minPosX + 1)) + minPosX;
+    } while (posX > window.innerWidth / 3 && posX < 2 * window.innerWidth / 3);
+
+    // Asegura que el mago no atraviese los límites de la pantalla
+    posX = Math.max(minPosX, Math.min(posX, maxPosX));
+    posY = Math.max(minPosY, Math.min(posY, maxPosY));
+
+    // Aplica la transición para un movimiento suave
+    wizard.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+    wizard.style.opacity = 0;
+
+    setTimeout(() => {
+        wizard.style.transform = `translate(${posX}px, ${posY}px)`;
+        wizard.style.opacity = 1;
+    }, 1000);
 }
+
+// Llama a la función cada vez que hay un paso de nivel
+function onLevelUp() {
+    wizardAnimation();
+}
+
+
+
 
 let cells = document.querySelectorAll(".cell");
 let gameLevel = 1;
