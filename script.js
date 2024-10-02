@@ -224,7 +224,7 @@ function wizardAnimation() {
     posY = Math.max(minPosY, Math.min(posY, maxPosY));
 
     // Aplica la transición para un movimiento suave
-    wizard.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
+    wizard.style.transition = 'transform 1s ease-in-out, opacity 0s ease-in-out';
     wizard.style.opacity = 0;
 
     setTimeout(() => {
